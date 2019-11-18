@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercise 1 Made Libs</title>
+</head>
+<body>
+  <div id="madlib"></div>
+  <script>
+    var adj1 = prompt("enter an adjective: ");
+    var noun1 = prompt("enter a noun: ");
+    var verb1 = prompt("enter a verb in the past tense: ");
+    var adv1 = prompt("enter an adverb: ");
+    var adj2 = prompt("enter another adjective: ");
+    var noun2 = prompt("enter another noun: ");
+    var noun3 = prompt("enter yet another noun: ");
+    var adj3 = prompt("enter another adjective: ");
+    var verb2 = prompt("enter another verb: ");
+    var adv2 = prompt("enter another adverb ");
+    var verb3 = prompt("enter one last verb in the past tense: ");
+    var adj4 = prompt("enter one last adjective: ");
+
+    var out = `Today I went to the zoo. I saw a ${adj1}<br/>`
+    out += `${noun1} jumping up and down in its tree. He<br/>`
+    out += `${verb1} ${adv1} through the large tunnel that led<br/>`
+    out += `to its ${adj2} ${noun2}.  I got some peanuts and passed<br/>`
+    out += `them thorugh the cage to a gigantic gray ${noun3} <br/>`
+    out += `towering above my head.  Feeding that animal made me<br/>`
+    out += `hungry.  I went to get a ${adj3} scoop of ice cream. <br/>`
+    out += `It filled my stomach.  Afterwards, I had to ${verb2} ${adv2}<br/>`
+    out += `to catch our bus. When I got home I ${verb3} my mom for<br/>`
+    out += `${adj4} day at the zoo.`
+
+   document.getElementById('madlib').innerHTML = out;
+  </script>
+  
+</body>
+</html>
