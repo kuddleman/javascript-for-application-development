@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lab #2B</title>
+</head>
+<body>
+  <div id="output"></div>
+
+  <script>
+    
+    var number = prompt("Give me a number: ");
+    number = parseInt(number);
+
+    
+    var print1 = document.getElementById('output').innerHTML = `<h1>Here's the number you gave me: ${number}</h1>`;
+    
+    
+    number += 10;
+    var print2 = document.getElementById('output').innerHTML = `<h1>Here's your number plus 10: ${number}</h1>`;
+
+    number += 20;
+    var print3 = document.getElementById('output').innerHtml = `<h1>Now we'll just add 20 more: ${number}</h1>`;
+   
+    number += 50;
+    var print4 = document.getElementById('output').innerHTML = `<h1>....and another 50 on top of that: ${number}</h1>`;
+    
+    number += 1568;
+    var print5 = document.getElementById('output').innerHTML = `<h1>Last time!  Let's give it 1568 more! ${number}</h1>`;
+    
+    document.getElementById('output').innerHTML = `${print1}<br/>
+                                                    ${print2}<br/>
+                                                    ${print3}<br/>
+                                                    ${print4}<br/>
+                                                    ${print5}`; 
+  
+  </script> 
+</body>
+</html>
