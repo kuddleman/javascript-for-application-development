@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lab #4 Conditions</title>
+</head>
+<body>
+  <h1>Lab #4 Conditions</h1>
+  <div id="output"></div>
+  <script>
+  var num1 = prompt("What is your first number? "),
+      num2 = prompt("What is your second number? "),
+      op = prompt("Enter an operation (+, -, *, /. or %");
+
+  if ( op === "+" ) {
+    var sum = num1 + num2;
+    document.getElementById('output').innerHTML = `${num1} + ${num2} = ${sum}.`;
+  } else if ( op === "-" ) {
+    var difference = num1 - num2;
+    document.getElementById( 'output' ).innerHTML = `${num1} - ${num2} = ${difference}.`;
+  } else if ( op === "*" ) {
+    var product = num1 * num2;
+    document.getElementById( 'output' ).innerHTML = `${num1} * ${num2} = ${product}.`;
+  } else if ( op === "/" ) {
+    var quotient = num1 / num2;
+    document.getElementById( 'output' ).innerHTML = `${num1} / ${num2} = ${quotient}.`;
+  } else if ( op === "%" ) {
+    var modulo = num1 % num2;
+    document.getElementById( 'output').innerHTML = `${num1} % ${num2} = ${modulo}`;
+  } else {
+    document.getElementById( 'output' ).innerHTML = `Something's screwy.  Try again.`;
+  }
+  </script>
+</body>
+</html>
