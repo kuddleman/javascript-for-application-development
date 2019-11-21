@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercise 5A Loops</title>
+</head>
+<body>
+  <h1>Exercise 5A Loops</h1>
+  <div id="output"></div>
+  <br>
+  <br>
+  <br>
+  <div id="output2"></div>
+
+  <script>
+    var pattern1 = "",
+        asterisk = "*",
+        dash = "-";
+
+
+    // pattern 1:
+    for (let i = 1; i <= 10; i++) {
+      pattern1 += `${asterisk.repeat(i)}<br/>`;
+    }
+
+    for (let i = 8; i >=1; i--) {
+      pattern1 += `${asterisk.repeat(i)}<br/>`;
+    }
+
+    document.getElementById('output').innerHTML = pattern1;
+
+    // pattern 2:
+    var pattern2 = "",
+        row = "",
+        repeat = `${asterisk}${dash}`;
+
+    for (var i = 1; i <= 6; i++) {
+      row += repeat;
+    }  
+
+    for (var i = 1; i <= 4; i++) {
+      pattern2 += `${row}<br/>`;
+    }
+
+    document.getElementById('output2').innerHTML = pattern2;
+  </script> 
+</body>
+</html>
