@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercise 5B Loops</title>
+</head>
+<body>
+  <h1>Exercise 5B Loops</h1>
+  <div id="output"></div>
+  <script>
+    var asterisk = "*",
+        pattern = "",
+        numRows = prompt("How many rows would you like? "),
+        numCol = prompt("How many columns would you like? "),
+        oneRow = "";
+    
+    // build one row
+    for (i = 1; i <= numCol; i++) {
+      oneRow += asterisk;
+    }
+    
+    // complete pattern
+    for (i = 1; i <= numRows; i++) {
+      pattern += `${oneRow}<br/>`;
+    }
+      
+    document.getElementById('output').innerHTML = pattern;
+  </script> 
+</body>
+</html>
