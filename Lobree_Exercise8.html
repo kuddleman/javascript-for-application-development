@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercise 8 Let and Const</title>
+</head>
+<body>
+  <h1>Exercise 8 Let and Const</h1>
+  <div id="output"></div>
+
+  <script>
+    let num1 = parseInt(prompt("What is your first number? "));
+    let num2 = parseInt(prompt("What is your second number? "));
+    let op = prompt("Enter +, -, *, /, or % to choose the operation: ");
+
+    const showResult = (num1, num2) => {
+      if (op === "+") {
+        let sum = num1 + num2;
+        document.getElementById('output').innerHTML = `${num1} + ${num2} = ${sum}`;
+        console.log(sum);
+      } else if (op === "-") {
+        let difference = num1 - num2;
+        document.getElementById('output').innerHTML = `${num1} - ${num2} = ${difference}`;
+      } else if (op === "*") {
+        let product = num1 * num2;
+        document.getElementById('output').innerHTML = `${num1} * ${num2} = ${product}`;
+      } else if (op === "/") {
+        let quotient = num1 / num2;
+        document.getElementById('output').innerHTML = `${num1} / ${num2} = ${quotient}`;
+      } else if (op === "%") {
+        let remainder = num1 % num2;
+        document.getElementById('output').innerHTML = `${num1} % ${num2} = ${remainder}`;
+      }
+    }
+
+    showResult(num1, num2);
+  </script>
+  
+</body>
+</html>
