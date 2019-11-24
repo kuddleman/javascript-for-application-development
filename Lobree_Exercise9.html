@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercise 9 To Do List</title>
+</head>
+<body>
+  <h1>Exercise 9</h1>
+  <div id="output"></div>
+
+  <script>
+    const toDoList = [
+                  "Read a book", 
+                  "Practice JS", 
+                  "Make Breakfast", 
+                  "Go to Gym", 
+                  "Call Larry", 
+                  "Pay Bills", 
+                  "Go to Safeway", 
+                  "Make Dr. Appt", 
+                  "Look at Computers on Ebay", 
+                  "Get New Bus Pass", 
+                  "Drink 2 gallons of water today"
+                  ];
+
+    const todo = () => {
+      document.getElementById('output').innerHTML += "<h1>TO-DO</h1>";
+    }
+
+    const addToDos = () => {
+      for (let i = 0; i < toDoList.length; i++) {
+        document.getElementById('output').innerHTML += `<p>${toDoList[i]}</p>`;
+      }
+    }
+
+  todo();
+  addToDos();                  
+  
+  </script>
+  
+</body>
+</html>

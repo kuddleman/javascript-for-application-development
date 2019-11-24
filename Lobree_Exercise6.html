@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercise 6 Arrays</title>
+</head>
+<body>
+  <h1>Exercise 6 Arrays</h1>
+  <div id="largest-to-smallest"></div>
+  <div id="average-GPA"></div>
+  <div id="highest-and-lowest"></div>
+  <div id="high-GPAs"></div>
+
+  <script>
+    var GPAs = [3.12, 2.65, 3.77, 3.70, 1.23, 3.33, 2.65, 3.87, 2.74];
+    var oneGPA = "";
+    var i = 1;
+    // while ( i < 100)
+    // {
+        
+    //     var oneGPA = prompt("Enter a GPA or XXX to Stop");
+        
+    //     if (oneGPA === "XXX" || null) {
+    //       alert("Ok, no more GPAs!")
+    //     }
+    //       oneGPA = parseFloat(oneGPA);
+    //       GPAs.push(oneGPA);
+        
+    //     i++;
+    // }
+
+    var myDate = prompt("What's his name? ");
+    console.log(GPAs)
+
+// A) The GPA’s in order from largest to smallest
+   // sort the GPAs using sort() then reverse() to get the highest first.
+
+   var sortedArray = GPAs.sort().reverse();
+   // loop through sorted GPAs array and print out each element in a single column
+   document.getElementById('largest-to-smallest').innerHTML = "<h2>Here are all the GPAs:</h2>";
+
+   for (var i = 0; i < sortedArray.length; i++) {
+     document.getElementById('largest-to-smallest').innerHTML += `${sortedArray[i]}<br/>`;
+   }
+
+// B) The average of the GPA’s
+    // set sum = 0;
+    // divide sum by GPAs.length
+
+    var sum = 0;
+    
+
+    for (var i = 0; i < GPAs.length; i++) {
+      sum += GPAs[i];
+    }
+
+    var average = sum / GPAs.length;
+    var twoDecimals = average.toFixed(2);
+    document.getElementById('average-GPA').innerHTML = "<h2>The average GPA is: " + twoDecimals + "</h2>";
+
+
+// C) The highest and lowest GPA for the class
+    // highest is sortedArray[0]   lowest is sortedArray[sortedArray.length - 1]
+    var highestGPA = sortedArray[0];
+    var lowestGPA = sortedArray[sortedArray.length - 1];
+
+    document.getElementById('highest-and-lowest').innerHTML = `<h2>The highest GPA is ${highestGPA}; the lowest GPA is ${lowestGPA}</h2>`;
+
+
+// D) A list of the outstanding GPA’s (Defined as GPA’s over 3.4).
+   // declare var outstanding = []
+   // loop though GPAs, find those over 3.4, push to outstanding
+   // loop through outstanding to print out each element single column list
+
+   var outstanding = [];
+   document.getElementById('high-GPAs').innerHTML = "<h2>Here is a list of GPAs over 3.4:</h2>"
+   for (var i = 0; i < GPAs.length; i++) {
+     if (GPAs[i] > 3.4) {
+       outstanding.push(GPAs[i]);
+     }
+   }
+
+   for (var i = 0; i < outstanding.length; i++) {
+     document.getElementById('high-GPAs').innerHTML += `${outstanding[i]}<br/>`;
+   }
+
+
+
+
+    // for(var x = 0; x < GPAs.length; x++)
+    // {
+    //     alert(GamepadPose[x]);
+    // }
+  
+  
+  </script>
+  
+</body>
+</html>
