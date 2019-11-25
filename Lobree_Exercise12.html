@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercise 12 Multiline Strings and String Templates</title>
+</head>
+<body>
+  <h1>Exercise 12 Multiline Strings and String Templates</h1>
+  <div id="floss-dance"></div>
+  <script>
+    let clothing = prompt("Enter a piece of clothing: "),
+        body1 = prompt("Enter a part of the body: "),
+        body2 = prompt("Enter another part of the body: "),
+        verb1 = prompt("Enter a verb: "),
+        body3 = prompt("Enter yet another part of the body: "),
+        verb2 = prompt("Enter another verb: "),
+        noun1 = prompt("Enter a plural noun: "),
+        noun2 = prompt("Enter another plural noun: "),
+        verb4 = prompt("Enter one last verb:");
+
+
+    
+      let output =`How to do The Floss Dance<br>
+
+       1) Put on some music<br>
+       2) Put on a ${clothing} (optional)<br>
+       3) Stand with your ${body1} ever so slightly bent<br>
+       4) Put hour hands in fists<br>
+       5) Place your ${body2}, relaxed, at the side of your body<br>
+       6) Begin to ${verb1} your ${body3} left and right around your torso in the opposite direction to your hips<br>
+       7) Keep doing it and increase speed and ${verb2} ${noun1} occasionally for effect<br>
+       After building confidence, you can also ${noun2} ${verb4} with your arms if desired, but this is not mandatory.     
+      `      
+      document.getElementById('floss-dance').innerHTML = output;
+  
+  </script>
+</body>
+</html>
