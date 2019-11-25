@@ -14,25 +14,21 @@
   <div id="high-GPAs"></div>
 
   <script>
-    var GPAs = [3.12, 2.65, 3.77, 3.70, 1.23, 3.33, 2.65, 3.87, 2.74];
+    // var GPAs = [3.12, 2.65, 3.77, 3.70, 1.23, 3.33, 2.65, 3.87, 2.74];
+    var GPAs = [];
     var oneGPA = "";
-    var i = 1;
-    // while ( i < 100)
-    // {
-        
-    //     var oneGPA = prompt("Enter a GPA or XXX to Stop");
-        
-    //     if (oneGPA === "XXX" || null) {
-    //       alert("Ok, no more GPAs!")
-    //     }
-    //       oneGPA = parseFloat(oneGPA);
-    //       GPAs.push(oneGPA);
-        
-    //     i++;
-    // }
+    
+        while (oneGPA != "XXX")
+        {
+            oneGPA = prompt("Enter a GPA or XXX to Stop");
+            if(oneGPA != "XXX"){
+                oneGPA = parseFloat(oneGPA);
+                GPAs.push(oneGPA);
+            }
+        }
 
-    var myDate = prompt("What's his name? ");
-    console.log(GPAs)
+    
+
 
 // A) The GPA’s in order from largest to smallest
    // sort the GPAs using sort() then reverse() to get the highest first.
@@ -51,7 +47,6 @@
 
     var sum = 0;
     
-
     for (var i = 0; i < GPAs.length; i++) {
       sum += GPAs[i];
     }
@@ -85,16 +80,6 @@
    for (var i = 0; i < outstanding.length; i++) {
      document.getElementById('high-GPAs').innerHTML += `${outstanding[i]}<br/>`;
    }
-
-
-
-
-    // for(var x = 0; x < GPAs.length; x++)
-    // {
-    //     alert(GamepadPose[x]);
-    // }
-  
-  
   </script>
   
 </body>
