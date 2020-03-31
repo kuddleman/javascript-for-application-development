@@ -12,27 +12,37 @@
   <div id="output"></div>
   <script>
   
-  // declare the 2 operands
-  var operand1 = 7,
-      operand2 = 10;
-
+  // prompt the user for two numbers
+  const operand1 = parseInt(prompt("Pick a number: "));
+  const operand2 = parseInt(prompt("Pick another number: "));
+  
+  
   // compare the operands in various ways
-  var sum = operand1 + operand2,
-      difference = operand1 - operand2,
-      product = operand1 * operand2,
-      isEqual = (7 === 10)? "Yes, it is!" : "No, it is not!",
-      isLessThan = ( 7 < 10)? "Yes, it is!" : "No, it is not!",  
-      divideEvenly = ( 10 % 7 === 0)? "Yes you can!" : "No, you cannot!";
+  const sum = operand1 + operand2;
+  const difference = operand1 - operand2;
+  const product = operand1 * operand2;
+  const isEqual = ( operand1 === operand2)? "Yes, it is!" : "No, it is not!";
+  const    isLessThan = ( operand1 < operand2)? "Yes, it is!" : "No, it is not!";  
+
+  console.log("before divideevenly", typeof operand1, typeof operand1 )
+  function divideEvenly(operand1, operand2){9
+    if ( operand1 % operand2 === 0  ) {
+      return "Yes you can!"
+    } else {
+      return "No, you can't!"
+
+    }
+  }
 
   // make a statement about the result of each comparaison:
-  var sumStatement = `What is the sum of operand1 and operand2? It's ${sum}.<br/>`,
-      differenceStatement = `What is the result if you subtract operand2 from
-                             operand1? The difference is ${difference}.<br/>`,
-      productStatement = `What is the result if you multiply operand1 by operand2?
+  var sumStatement = `What is the sum of ${operand1} and ${operand2}? It's ${sum}.<br/>`,
+      differenceStatement = `What is the result if you subtract ${operand2} from
+                             ${operand1}? The difference is ${difference}.<br/>`,
+      productStatement = `What is the result if you multiply ${operand1} by ${operand2}?
                           It's ${product}.<br/>`,
-      isEqualStatement = `Is operand1 equal to operand2? ${isEqual}<br/>`,
-      isLessThanStatement = `Is operand1 smaller than operand2? ${isLessThan}<br/>`,
-      divideEvenlyStatement = `Can you divide operand2 evenly into operand1? ${divideEvenly}`; 
+      isEqualStatement = `Is ${operand1} equal to ${operand2}? ${isEqual}<br/>`,
+      isLessThanStatement = `Is ${operand1} smaller than ${operand2}? ${isLessThan}<br/>`,
+      divideEvenlyStatement = `Can you divide ${operand1} evenly into ${operand2}? ${divideEvenly( operand1, operand2 )}`; 
   
   // print each statement to the 'output' div    
   document.getElementById('output').innerHTML = `${sumStatement}
