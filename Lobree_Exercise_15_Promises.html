@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Exercise 15: Promises</h1>
+  <!-- Your interface should have a field for the user to enter a width -->
+
+  <!-- a field to enter the height  -->
+
+  <!-- a button that retrieves and displays a photo of the indicated size. -->
+
+  <form action="" name="photo-form">
+    <label for="width">Desired WIDTH of your photo (in pixels):</label>
+    <input type="text" id="width"><br><br>
+    <label for="length">Desired LENGTH of your photo (in pixels):</label>
+    <input type="text" id="length"><br><br>
+    <button type="submit" id="submit">Get my Photo!</button>
+
+  </form>
+  <h2>Here  is your photo:</h2>
+  <div id="display-something">
+
+  </div>
+
+<script>
+// https://picsum.photos/200/300
+// https://picsum.photos/width/height
+
+let img = null;
+let width = document.getElementById('width').value 
+let length = document.getElementById('length').value 
+
+const btn = document.getElementById('submit')
+
+btn.addEventListener('click', handleClick)
+
+function handleClick(){
+  
+
+  console.log("width is:", width)
+  console.log("length is:", length)
+
+}
+
+// LOOK AT THIS TO HANDLE ONCLICK:   https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onclick
+
+    // let imgPromise = new Promise((resolve, reject  ) => {
+    //   img = new Image();
+    //   img.addEventListener('load', resolve(img));
+    //   img.addEventListener('error', reject('Could not load image'));
+    //   img.src = `https://picsum.photos/${width}/${height}`;
+    // });
+
+    // imgPromise.then(fromResolve => {
+    //   console.log("We have contact with image, Houston!")
+    //   let node = document.getElementById('display-something');
+    //   node.appendChild(img)
+    // }).catch(fromReject => {
+    //   console.log(fromReject)
+    // })
+
+
+
+
+
+</script> 
+  
+</body>
+</html>
