@@ -8,10 +8,23 @@
 </head>
 <body>
   <h1>Exercise 10 Maps</h1>
-  <button id="display">Display Task Assignment(s)</button>
+  <button id="add-task">Add Another Assignment</button><br><br>
+  <button id="display" >Display All Task Assignments</button>
   <br><br>
-  <div id="output"></div>
+  <div>
+     <ul id="display-ul">
+
+     </ul>
+
+  </div>
+
+
   <script>
+    
+    let nameAssignment = new Map();
+    const displayUl = document.getElementById('display-ul')
+    displayUl.innerHTML = ''
+    
     let name = prompt(`Enter a name:` );
     let task = prompt(`Enter a number from the list below
                       to assign that task to the person whose
@@ -22,26 +35,77 @@
                       4 - Clean Toilet,
                       5 - Clean Sink,
                       6 - Trash Patrol and Supplies:`);
-
-    let nameAssignment = new Map();
-
+    alert(
+      `Cool!  Do you want to assign another task or 
+        see all the tasks you've assigned? 
+        Click the blue "ok" button in this box. 
+        Then press one of the two buttons on the page.
+        Make 'em work!!!`
+        ) 
+                                                                    
     if (task === "1") {
       nameAssignment.set("Front Room Sweep", name);
     } else if (task === "2"){
-      nameAssignment.set("Back Room Sweep", name);
+      nameAssignment.set("Back Room Sweep ", name);
     } else if (task === "3"){
-      nameAssignment.set("Outside Grounds", name);
+      nameAssignment.set("Outside Grounds ", name);
     } else if (task === "4"){
-      nameAssignment.set("Clean Toilet", name);
+      nameAssignment.set("Clean Toilet ", name);
     } else if (task === "5"){
-      nameAssignment.set("Clean Sink", name);
+      nameAssignment.set("Clean Sink ", name);
     } else if (task === "6"){
-      nameAssignment.set("Trash patrol and Supplies", name);
-    }                                                   
-  
+      nameAssignment.set("Trash patrol and Supplies ", name);
+    }   
+      
+    const addTask = document.getElementById('add-task');
+
+    addTask.onclick  = function() {
+      console.log("I'm in ADDTask")
+      let name = prompt(`Enter a name:` );
+      let task = prompt(`Enter a number from the list below
+                        to assign that task to the person whose
+                        name you just entered:
+                        1 - Front Room Sweep,
+                        2 - Back Room Sweep,
+                        3 - Outside Grounds,
+                        4 - Clean Toilet,
+                        5 - Clean Sink,
+                        6 - Trash Patrol and Supplies:`);
+                        alert(
+                          `Cool!  Do you want to assign another task or 
+                          see all the tasks you've assigned? 
+                          Click the blue "ok" button in this box. 
+                          Then press one of the two buttons on the page.`
+                          ) 
+                                                                      
+      if (task === "1") {
+        nameAssignment.set("Front Room Sweep", name);
+      } else if (task === "2"){
+        nameAssignment.set("Back Room Sweep ", name);
+      } else if (task === "3"){
+        nameAssignment.set("Outside Grounds ", name);
+      } else if (task === "4"){
+        nameAssignment.set("Clean Toilet ", name);
+      } else if (task === "5"){
+        nameAssignment.set("Clean Sink ", name);
+      } else if (task === "6"){
+        nameAssignment.set("Trash patrol and Supplies ", name);
+      }   
+
+
+    }
+    
+
+                                            
+    const display = document.getElementById('display')
     display.onclick = function() {
-      for(let pair of nameAssignment.entries())
-      document.getElementById('output').innerHTML += pair;
+      //const displayUl = document.getElementById('display-ul')
+      for(let pair of nameAssignment.entries()) {
+         //display.innerHTML += `<li>${pair}</li>`
+        // displayUl.appendChild = `<li>${pair}</li>`
+        displayUl.innerHTML += `<li>${pair}</li>`
+      }
+      
     }
   </script>
   
