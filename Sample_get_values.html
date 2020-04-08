@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  Enter Something Here: <input type="text" id="foo" value=""/><br><br>
+  Enter Something else Here: <input type="text" id="zoo" value=""/>
+
+  <button onclick ="getValue()">Get Value</button>
+
+  <p id="boo"></p>
+  
+  <script>
+  const getValue = () => {
+    const y = document.getElementById('boo')
+    const x = document.getElementById('foo').value
+    const z = document.getElementById('zoo').value
+    console.log(x)
+    console.log(z)
+     
+    // y.innerHTML = `${x} and and ${z}`;
+  }
+
+
+
+  </script>
+</body>
+</html>

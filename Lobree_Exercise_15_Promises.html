@@ -13,12 +13,12 @@
 
   <!-- a button that retrieves and displays a photo of the indicated size. -->
 
-  <form action="" name="photo-form">
+  <form action="" name="photoForm">
     <label for="width">Desired WIDTH of your photo (in pixels):</label>
-    <input type="text" id="width"><br><br>
+    <input type="number" id="width" name="width"><br><br>
     <label for="length">Desired LENGTH of your photo (in pixels):</label>
-    <input type="text" id="length"><br><br>
-    <button type="submit" id="submit">Get my Photo!</button>
+    <input type="number" id="length" name="length"><br><br>
+    <input onclick="getWidthAndLength()" value="Get My Photo!">
 
   </form>
   <h2>Here  is your photo:</h2>
@@ -30,23 +30,35 @@
 // https://picsum.photos/200/300
 // https://picsum.photos/width/height
 
-let img = null;
-let width = document.getElementById('width').value 
-let length = document.getElementById('length').value 
+//let img = null;
+const getWidthAndLength = () => {
+ 
+  const picWidth = document.photoForm.width.value 
+  const picLength = document.photoForm.length.value
+  console.log("the width is:", picWidth);
+  console.log("the height is:", picLength)
 
-const btn = document.getElementById('submit')
+    let imgPromise = new Promise((resolve, reject  ) => {
+      img = new Image();
+      img.addEventListener('load', resolve(img));
+      img.addEventListener('error', reject('Could not load image'));
+      img.src = `https://picsum.photos/${picWidth}/${picLength}`;
+    });
 
-btn.addEventListener('click', handleClick)
-
-function handleClick(){
-  
-
-  console.log("width is:", width)
-  console.log("length is:", length)
+    imgPromise.then(fromResolve => {
+      console.log("We have contact with image, Houston!")
+      let node = document.getElementById('display-something');
+      node.appendChild(img)
+    }).catch(fromReject => {
+      console.log(fromReject)
+    })
 
 }
 
-// LOOK AT THIS TO HANDLE ONCLICK:   https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onclick
+
+
+
+
 
     // let imgPromise = new Promise((resolve, reject  ) => {
     //   img = new Image();
@@ -64,6 +76,12 @@ function handleClick(){
     // })
 
 
+
+
+
+    // LOOK AT THIS TO HANDLE ONCLICK:   https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onclick
+// This Utube video
+// https://youtu.be/6BlaKlmeWGk
 
 
 
