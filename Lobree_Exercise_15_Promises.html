@@ -18,8 +18,13 @@
     <input type="number" id="width" name="width"><br><br>
     <label for="length">Desired LENGTH of your photo (in pixels):</label>
     <input type="number" id="length" name="length"><br><br>
+    <input type="checkbox" id="grayscale" name="grayscale" value="grayscale">
+    <label for="grayscale">Check the box if you 
+                           want your picture to be in 
+                           black and white
+    </label>
+    <br><br><br>
     <input onclick="getWidthAndLength()" value="Get My Photo!">
-
   </form>
   <h2>Here  is your photo:</h2>
   <div id="display-something">
@@ -30,19 +35,25 @@
 // https://picsum.photos/200/300
 // https://picsum.photos/width/height
 
+// const myBox = document.querySelector('#grayscale').checked
+// console.log(myBox)
+
 //let img = null;
 const getWidthAndLength = () => {
  
   const picWidth = document.photoForm.width.value 
   const picLength = document.photoForm.length.value
-  console.log("the width is:", picWidth);
-  console.log("the height is:", picLength)
+  const boxIsCheckedValue = document.getElementById('grayscale').checked
 
     let imgPromise = new Promise((resolve, reject  ) => {
       img = new Image();
       img.addEventListener('load', resolve(img));
       img.addEventListener('error', reject('Could not load image'));
-      img.src = `https://picsum.photos/${picWidth}/${picLength}`;
+      if(boxIsCheckedValue === true) {
+        img.src = `https://picsum.photos/${picWidth}/${picLength}?grayscale`;
+      } else {
+        img.src = `https://picsum.photos/${picWidth}/${picLength}`;
+      }
     });
 
     imgPromise.then(fromResolve => {
@@ -58,30 +69,6 @@ const getWidthAndLength = () => {
 
 
 
-
-
-    // let imgPromise = new Promise((resolve, reject  ) => {
-    //   img = new Image();
-    //   img.addEventListener('load', resolve(img));
-    //   img.addEventListener('error', reject('Could not load image'));
-    //   img.src = `https://picsum.photos/${width}/${height}`;
-    // });
-
-    // imgPromise.then(fromResolve => {
-    //   console.log("We have contact with image, Houston!")
-    //   let node = document.getElementById('display-something');
-    //   node.appendChild(img)
-    // }).catch(fromReject => {
-    //   console.log(fromReject)
-    // })
-
-
-
-
-
-    // LOOK AT THIS TO HANDLE ONCLICK:   https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onclick
-// This Utube video
-// https://youtu.be/6BlaKlmeWGk
 
 
 
